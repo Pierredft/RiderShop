@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "RiderShop",
+    "slug": "RiderShop",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logos/l4.jpeg",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/logos/c2.jpeg",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

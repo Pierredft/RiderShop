@@ -1,27 +1,18 @@
-import { StyleSheet, Text, View, Alert, Button, ScrollView, ordered, Image, FlatList, TouchableOpacity,} from 'react-native';
+import { StyleSheet, Text, View, Alert, Button, ScrollView, ordered, Image, FlatList, TouchableOpacity, Modal,} from 'react-native';
 import React, { useState } from 'react';
+import {Products} from './Products.js';
 
-function Products() {
-    const [products, setProducts] = useState([
-        { name: 'Casque', props: ['Arai', 'Bell', 'Dexter', 'Hjc', 'Ls2', 'Nexx', 'Scorpion exo', 'Shark', 'Shoei', 'Agv', 'Airoh', 'All One' ] },
-        { name: 'Gants', props: ['All One', 'Alpinstars', 'Alpinestars x Diesel', 'Bering', 'Dainese', 'Dakar', 'DMP', 'Five', 'Furygan', 'Harisson', 'Helstons', 'Icon', 'Ixon', 'Klim', 'Macna', 'Rev\'it', 'Route 66 by All One', 'Segura'] },
-        { name: 'Pantalon Cuir', props: ['Alpinestars', 'Bering', 'Dainese', 'DMP', 'Furygan', 'Ixon', 'Rev\'it', 'Segura'] },
-        { name: 'Bottes', props: ['Acerbis', 'All One', 'Alpinestars', 'Bering', 'Dainese', 'Falco', 'Forma', 'Furygan', 'Helstons', 'Icon', 'Ixon', 'Klim', 'Rev\'it', 'Shot', 'Stylmartin', 'TCX'] },
-        { name: 'Basket', props: ['All One', 'Alpinstars', 'Bering', 'Dainese', 'DMP', 'Falco', 'Forma', 'Furygan','Harisson', 'Helstons', 'Icon', 'Ixon', 'Momo Design', 'Rev\'it', 'Segura', 'Stylmartin', 'TCX' ] },
-        { name: 'Blouson Cuir', props: ['All One', 'Alpinstars', 'Bering', 'Dainese', 'DMP', 'Furygan', 'Helstons', 'Icon', 'Ixon', 'Macna', 'Rev\'it', 'Segura'] },
-        { name: 'Combinaison', props: [''] },
-    ]);
-
-    const [isDisplayed, setIsDisplayed] = useState(false);
+const [isDisplayed, setIsDisplayed] = useState(false);
     const [modal, setModal] = useState(false);
     // Alert.alert('bienvenue');
-    let menu=products.map(product=>
-        (
-            <View key={Math.random()}>
-                <Text style={styles.card}>{product.name}</Text>
-            </View>
-        ))
+    // let menu=products.map(product=>
+    //     (
+    //         <View key={Math.random()}>
+    //             <Text style={styles.card}>{product.name}</Text>
+    //         </View>
+    //     ))
 
+    function ModalProds() {
     return (
             <View style={styles.container}>
                 <Image source={require('./assets/logos/l1.jpeg')} style={{ width: 80, height: 80 }} />
@@ -31,6 +22,9 @@ function Products() {
                 }
                 <View>
                     <Button onPress={()=>setOrdered(true)} title="Passer ma commande" color="#006341" style={styles.boutbout}></Button>
+                </View>
+                <View>
+                    {<Products/>}
                 </View>
                 <View style={{marginTop:40, marginBottom:150}}>
                     {
@@ -50,7 +44,13 @@ function Products() {
                         </View>}
                         style={{width:'100%'}}
                         keyExtractor={item=>Math.random()}
-                    />}                
+                    />}
+                    {/* <TouchableOpacity
+                    onPress={()=>console.log('pressé')}
+                    style={{width:'40%',backgroundColor:'#006341', paddingHorizontal:15,paddingVertical:5}}>
+                        <Text style={{color:'#fff'}}>Pressé</Text>
+                    </TouchableOpacity> */}
+                    
                 </View>
             </View>
     );
@@ -84,4 +84,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Products;
+export default ModalProds;

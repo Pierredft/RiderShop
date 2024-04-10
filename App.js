@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Button, Image, FlatList, TouchableHighlight, Sa
 import React,{useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import  Products  from './Products.js';
+import { ModalProds } from './ModalProds.js';
 
 const window = Dimensions.get('window');
 const { width, height } = window;
@@ -13,8 +14,7 @@ function App() {
         <Image source={require('./assets/logos/l4.jpeg')} style={{width: 80, height: 80}} />
       </View>
       <View>
-        {<Products />}
-        
+        {<Products/>}
       </View>
       </SafeAreaView>
   );
